@@ -15,7 +15,7 @@ pipeline {
     stage('First stage') {
       steps {
         container('s2i') {
-          sh "build . pingworks/demo-builder:2 demo3:$BRANCH_NAME"
+          sh "s2i build . pingworks/demo-builder:2 demo3:$BRANCH_NAME"
         }
       }
     }
