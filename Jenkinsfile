@@ -16,6 +16,7 @@ pipeline {
       steps {
         container('s2i') {
           sh "s2i build . pingworks/demo-builder:2 demo3:$BRANCH_NAME"
+          sh "docker push $IMAGE_NAME:$RELEASE_VERSION"
         }
       }
     }
