@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: demo3
-        image: "draft:dev"
+        image: "10.43.241.209:5000/jenkinsx-pw1/demo3:master-1-7ba9955"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
