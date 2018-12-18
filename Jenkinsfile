@@ -23,9 +23,11 @@ pipeline {
     stage('Second stage') {
       steps {
         container('s2i') {
-          dir("charts/$APP_NAME"){  
-          sh "make version"
-          sh "helm upgrade --install --wait --namespace $RELEASE_NAMESPACE $APP_NAME ."
+          dir("charts/$APP_NAME")
+          {  
+            sh "make version"
+            sh "helm upgrade --install --wait --namespace $RELEASE_NAMESPACE $APP_NAME ."
+          }
         }   
       }
     }
@@ -36,3 +38,4 @@ pipeline {
     }
   }
 }
+
