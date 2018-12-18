@@ -26,7 +26,7 @@ pipeline {
           dir("charts/$APP_NAME"){  
           sh "make version"
           sh "helm upgrade --install --wait --namespace $RELEASE_NAMESPACE $APP_NAME ."
-        }
+        }   
       }
     }
   }
